@@ -14,7 +14,7 @@ public class HanoiWindow extends JFrame implements ActionListener {
     char[] towerName = {'A', 'B', 'C'};
     JMenuBar bar;
     JMenu menuGrade,menuRule;
-    JMenuItem oneGradeItem, twoGradeItem, threeGradeItem;
+    JMenuItem oneGradeItem, twoGradeItem, threeGradeItem,fourGradeItem;
     JMenuItem gameRuleItem;
     JButton renew = null;
     JButton autoButton = null;
@@ -36,10 +36,12 @@ public class HanoiWindow extends JFrame implements ActionListener {
         oneGradeItem = new JMenuItem("初级");
         twoGradeItem = new JMenuItem("中级");
         threeGradeItem = new JMenuItem("高级");
+        fourGradeItem = new JMenuItem("超高级");
 
         menuGrade.add(oneGradeItem);
         menuGrade.add(twoGradeItem);
         menuGrade.add(threeGradeItem);
+        menuGrade.add(fourGradeItem);
 
         bar.add(menuGrade);
 
@@ -55,6 +57,7 @@ public class HanoiWindow extends JFrame implements ActionListener {
         twoGradeItem.addActionListener(this);
         threeGradeItem.addActionListener(this);
         gameRuleItem.addActionListener(this);
+        fourGradeItem.addActionListener(this);
 
         renew = new JButton("重新开始");
         renew.addActionListener(this);
@@ -92,6 +95,10 @@ public class HanoiWindow extends JFrame implements ActionListener {
             tower.putDiscOnTower();
         } else if (e.getSource() == threeGradeItem) {
             amountOfDisc = 4;
+            tower.setAmountOfDisc(amountOfDisc);
+            tower.putDiscOnTower();
+        } else if (e.getSource() == fourGradeItem) {
+            amountOfDisc = 5;
             tower.setAmountOfDisc(amountOfDisc);
             tower.putDiscOnTower();
         } else if (e.getSource() == renew) {
