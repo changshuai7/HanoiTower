@@ -6,7 +6,8 @@ package hanoi_algorithm;
 public class HanoiTower {
     public static void main(String[] args) {
 
-        hanoiTower(5, 'A', 'B', 'C');
+        hanoiTower(2, 'A', 'B', 'C');
+        System.out.println("\n总共" + num + "次\n");
 
     }
 
@@ -40,6 +41,8 @@ public class HanoiTower {
 
     }
 
+    public static int num = 0;
+
     /**
      * 执行移动
      *
@@ -48,6 +51,7 @@ public class HanoiTower {
      * @param toTower   终点位置
      */
     public static void move(int n, char fromTower, char toTower) {
+        num++;
         System.out.println("第" + n + "个盘：" + "从" + fromTower + "到" + toTower);
     }
 }
